@@ -1,0 +1,32 @@
+use("platzi_store")
+
+db.products.drop()
+
+db.products.insertMany([
+    {
+        _id: 1,
+        name: "Arepa reina pepiada",
+        price: 50
+    },
+    {
+        _id: 2,
+        name: "Arepa de carne mechada",
+        price: 55
+    },
+    {
+        _id: 3,
+        name: "Arepa full queso y jamon",
+        price: 40
+    },
+    {
+        _id: 4,
+        name: "Arepa de atun",
+        price: 55
+    },
+    {
+        name: "Arepa de cochino",
+        price: 60
+    },
+])
+
+db.products.find()
