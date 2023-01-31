@@ -1,0 +1,33 @@
+use("sample_training")
+
+//implicit
+// db.inspections.find({
+//     sector: "Tax Preparers - 891",
+//     result: "Unable to Locate"
+// }).count()
+
+// $and [{}. {}, {}]
+// db.inspections.find({
+//     $and : [
+//     {sector: "Tax Preparers - 891"},
+//     {result: "Unable to Locate"}
+//     ]
+// })
+
+//explicit
+// $or [{}. {}, {}]
+db.inspections.find({
+    $or: [
+    {sector: "Tax Preparers - 891"},
+    {result: "Unable to Locate"}
+    ]
+})
+
+// $nor [{}. {}, {}] --> no incluye esta condicion
+db.inspections.find({
+    $nor: [
+    {sector: "Tax Preparers - 891"},
+    {result: "Unable to Locate"}
+    ]
+})
+
